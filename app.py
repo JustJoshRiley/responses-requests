@@ -9,7 +9,7 @@ def homepage():
 
 @app.route('/penguins')
 def penguins():
-    return "penguins are cute!"
+    return "Penguins are cute!"
 
 @app.route('/animal/<users_animal>')
 def favorite_animal(users_animal):
@@ -28,15 +28,13 @@ def madlibs(adjective, noun):
 
 @app.route('/multiply/<number1>/<number2>')
 def multiply(number1, number2):
-    
-    
     if number1.isdigit()  == True and number2.isdigit() == True:
         number_1 = int(number1)
         number_2 = int(number2)
-        answer = number_2 * number_1
-        return f'{answer}'
+        answer = number_1 * number_2
+        """Display number calculated by parameters"""
+        return answer
     return "Invalid inputs. Please try again by entering 2 numbers!"
-
 
 if __name__ == '__main__':
     app.run(debug=True)
