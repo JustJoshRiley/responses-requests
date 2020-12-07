@@ -28,13 +28,12 @@ def madlibs(adjective, noun):
 
 @app.route('/multiply/<number1>/<number2>')
 def multiply(number1, number2):
-    number_1 = int(number1)
-    number_2 = int(number2)
-    if number1.isdigit()  == True and number2.isdigit() == True:
-        answer = number_1 * number_2
-        """Display number calculated by parameters"""
-        return f'You multiplied {number_1} and {answer_2} to get{answer}'
-    return "Invalid inputs. Please try again by entering 2 numbers!"
+    if number1.isdigit() == False or number2.isdigit() == False:
+        return f'invalid inputs. Please try again by entering 2 numbers!'
+    else:
+        answer = int(number1) * int(number2)
+        return f'You multiplied {number1} and {number2} to get {answer}.'
+
 
 if __name__ == '__main__':
     app.run(debug=True)
